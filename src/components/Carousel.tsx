@@ -30,7 +30,7 @@ export const Carousel: React.FC<CarouselType> = ({
 
   const handlePrev = () => {
     if (infinite && visibleIndex === 0) {
-      setVisibleIndex(images.length - frameSize);
+      setVisibleIndex(Math.max(0, images.length - frameSize));
     } else {
       setVisibleIndex(Math.max(0, visibleIndex - step));
     }
